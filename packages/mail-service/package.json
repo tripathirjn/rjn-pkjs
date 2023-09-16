@@ -1,6 +1,6 @@
 {
   "name": "@tripathirjn/mail-service",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "description": "mail utility built on the top of send-grid and nodemailer",
   "keywords": [
     "mail-service",

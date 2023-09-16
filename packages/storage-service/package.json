@@ -1,6 +1,6 @@
 {
   "name": "@tripathirjn/storage-service",
-  "version": "1.0.0",
+  "version": "1.0.1-alpha.0",
   "description": "storage service build for cloudinary",
   "keywords": [
     "storage-service"
