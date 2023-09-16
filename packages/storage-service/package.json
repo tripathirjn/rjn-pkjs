@@ -1,0 +1,25 @@
+{
+  "name": "@tripathirjn/storage-service",
+  "version": "1.0.0",
+  "description": "storage service build for cloudinary",
+  "keywords": [
+    "storage-service"
+  ],
+  "author": "Rajan Tripathi <tripathirajan3@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/storage-service.test.js"
+  },
+  "dependencies": {
+    "cloudinary": "^1.40.0"
+  }
+}
