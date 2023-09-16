@@ -1,0 +1,29 @@
+{
+  "name": "@tripathirjn/logtrace",
+  "version": "1.0.0",
+  "description": "logger on the top of pino",
+  "keywords": [
+    "logger",
+    "pino-wrapper-logger"
+  ],
+  "author": "Rajan Tripathi <tripathirajan3@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/logtrace.test.js"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.9",
+    "file-stream-rotator": "^1.0.0",
+    "pino": "^8.15.1",
+    "pino-pretty": "^10.2.0"
+  }
+}

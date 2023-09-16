@@ -1,0 +1,33 @@
+{
+  "name": "@tripathirjn/mail-service",
+  "version": "1.0.0",
+  "description": "mail utility built on the top of send-grid and nodemailer",
+  "keywords": [
+    "mail-service",
+    "send-grid",
+    "node-mailer"
+  ],
+  "author": "Rajan Tripathi <tripathirajan3@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/mail-service.test.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "nodemailer": "^6.9.5",
+    "streamifier": "^0.1.1"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.10",
+    "@types/streamifier": "^0.1.0"
+  }
+}

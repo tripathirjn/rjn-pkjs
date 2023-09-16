@@ -1,0 +1,29 @@
+{
+  "name": "@tripathirjn/crypto-service",
+  "version": "1.0.0",
+  "description": "cryptography and hashing utility",
+  "keywords": [
+    "crypto-service",
+    "nodejs-utiility-service"
+  ],
+  "author": "Rajan Tripathi <tripathirajan3@gmail.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "dist/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "node ./__tests__/crypto-service.test.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.1.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0"
+  }
+}
