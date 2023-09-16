@@ -19,8 +19,16 @@
     "lib"
   ],
   "scripts": {
-    "test": "node ./__tests__/node-app.test.js",
-    "tsc": "tsc"
+    "test": "jest --config jestconfig.json",
+    "prebuild": "npm run lint && npm run format",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "format": "prettier --write \"lib/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json --fix",
+    "lint:fix": "npm run lint --fix",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "format:fix": "npm run lint && npm run format"
   },
   "publishConfig": {
     "access": "public"
