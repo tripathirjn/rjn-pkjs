@@ -1,3 +1,5 @@
+import { Document } from 'mongoose';
+
 export type SortOrder = 'asc' | 'desc';
 
 export type Sorting = {

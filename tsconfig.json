@@ -1,17 +1,23 @@
 {
     "compilerOptions": {
-      "module": "commonjs",
-      "declaration": true,
       "noImplicitAny": false,
       "removeComments": true,
       "noLib": false,
       "emitDecoratorMetadata": true,
       "experimentalDecorators": true,
-      "target": "es6",
       "sourceMap": true,
       "lib": [
         "es6"
-      ]
+      ],
+      "incremental": true,            /* Enable incremental compilation */
+      "target": "ES2016",                /* Specify ECMAScript target version: */
+      "module": "commonjs",           /* 'none', 'commonjs', 'amd', 'system', etc */
+      "declaration": true,            /* Concatenate & emit output to single file.*/
+      "outDir": "lib",                /* Redirect output to the directory. */
+      "esModuleInterop": true,        /* Enables intero between CommonJS and ES */
+      "skipLibCheck": true,           /* Skip type checking of declaration files. */
+      "forceConsistentCasingInFileNames": true, /* Disallow inconsistently */
+      "strict": true
     },
     "exclude": [
       "node_modules",

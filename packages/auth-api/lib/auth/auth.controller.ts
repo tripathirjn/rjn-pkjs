@@ -11,6 +11,8 @@ import {
 } from '../apiHelper';
 import { EMAIL_REGEX_PATTERN, PASSWORD_PATTERN_NORMAL, REFRESH_TOKEN_COOKIE_NAME } from '../apiHelper/constants';
 import {
+  NullableUserDoc,
+  IUserDocument,
   NewRegisteredUser,
   ValidationResult,
   createNewUser,
@@ -22,7 +24,7 @@ import {
 } from '../user';
 import { TokenType, generateAuthTokens, verifyToken, ITokenDoc, getToken, generateResetPasswordToken } from '../token';
 import { Types } from 'mongoose';
-import { MailServiceManager } from '@tripathirajan/mail-service';
+import { MailServiceManager } from '@tripathirjn/mail-service';
 import { resetPasswordTemplate } from './email-templates';
 import Token from '../token/token.model';
 
@@ -73,7 +75,7 @@ export const checkSession = asyncControllerHandler(async (data: ControllerPayloa
   if (!refreshToken) return new Unauthorized('Unauthorized');
   const result = await verifyToken(refreshToken, TokenType.REFRESH);
   if ('isValid' in result && !result.isValid) return new Unauthorized(result.error);
-  let user = null;
+  let user: NullableUserDoc = null;
   if ('user' in result) {
     user = await getUserById(new Types.ObjectId(result.user));
   }
@@ -134,7 +136,7 @@ export const resetPassword = asyncControllerHandler(async (data: ControllerPaylo
   if (!PASSWORD_PATTERN_NORMAL.test(password)) return new BadRequest('Please choose password with defined criteria.');
   const resetPassToken = await verifyToken(token, TokenType.RESET_PASSWORD);
   if ('isValid' in resetPassToken && !resetPassToken.isValid) return new Unauthorized(resetPassToken.error);
-  let user = null;
+  let user: NullableUserDoc = null;
   if ('user' in resetPassToken) {
     user = await getUserById(new Types.ObjectId(resetPassToken.user));
   }

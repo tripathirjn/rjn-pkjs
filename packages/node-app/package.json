@@ -10,6 +10,7 @@
   "homepage": "https://github.com/tripathirjn/node-app.git#readme",
   "license": "ISC",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -19,7 +20,7 @@
   ],
   "scripts": {
     "test": "node ./__tests__/node-app.test.js",
-    "build": "tsc"
+    "tsc": "tsc"
   },
   "publishConfig": {
     "access": "public"

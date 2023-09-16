@@ -11,6 +11,7 @@
   "homepage": "",
   "license": "ISC",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "directories": {
     "lib": "lib",
     "test": "__tests__"
@@ -19,7 +20,16 @@
     "lib"
   ],
   "scripts": {
-    "test": "node ./__tests__/mail-service.test.js"
+    "test": "jest --config jestconfig.json",
+    "prebuild": "npm run lint && npm run format",
+    "build": "tsc",
+    "prestart": "npm run build",
+    "format": "prettier --write \"lib/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json --fix",
+    "lint:fix": "npm run lint --fix",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "format:fix": "npm run lint && npm run format"
   },
   "dependencies": {
     "@sendgrid/mail": "^7.7.0",

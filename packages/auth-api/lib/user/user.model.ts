@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 import { IUserDocument, IUserModel } from './user.types';
-import { HashingAgent } from '@tripathirajan/crypto-service';
+import { HashingAgent } from '@tripathirjn/crypto-service';
 import { filterRecords, toJSON } from '../apiHelper';
 
 const Schema = mongoose.Schema;

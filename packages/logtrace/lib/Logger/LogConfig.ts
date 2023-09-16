@@ -90,7 +90,7 @@ class LogConfig {
   private applyLogRules(): void {
     let fileName: string = '';
     let outputType: LogMode[] = [];
-    const streamRules = [];
+    const streamRules: any = [];
     for (const { loggerName, level, outputMode } of this.rules) {
       fileName = Utility.toFileNameCase(loggerName === '*' ? level : loggerName);
       outputType = outputMode?.split(',') as LogMode[];
@@ -208,7 +208,7 @@ class LogConfig {
     config: {
       level: LogLevel;
     } & TargetOpts,
-  ) {
+  ): any {
     const { level, dest, prettyPrint } = config;
     return {
       level,

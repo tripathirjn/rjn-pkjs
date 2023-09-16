@@ -57,3 +57,5 @@ export enum UserRole {
   ADMIN = 'admin',
   SUPER_ADMIN = 'superAdmin',
 }
+
+export type NullableUserDoc = IUserDocument | null;
