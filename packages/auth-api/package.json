@@ -19,7 +19,7 @@
     "lib"
   ],
   "scripts": {
-    "test": "jest --config jestconfig.json",
+    "test": "jest --config ../../jestconfig.json",
     "prebuild": "npm run lint && npm run format",
     "build": "tsc",
     "prestart": "npm run build",
