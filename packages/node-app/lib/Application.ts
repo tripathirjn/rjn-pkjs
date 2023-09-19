@@ -6,7 +6,9 @@ import { AddressInfo } from 'net';
 import path from 'path';
 import { AppConfig, AppMiddleWare, AppRoute, Environment, HttpsServerConfig } from './types';
 import { default as AppServer } from './AppServer';
+import packageInfo from '../package.json';
 
+const { name, version } = packageInfo || {};
 class Application {
   /**
    * App  of application
@@ -195,7 +197,7 @@ class Application {
       if (req.accepts('html')) {
         res.sendFile(path.join(process.cwd(), 'errors', '404.html'));
       } else if (req.accepts('json')) {
-        res.json({ message: ' Not found.' });
+        res.json({ message: 'Not found.' });
       } else {
         res.type('txt').send('404 Not Found');
       }
@@ -251,7 +253,7 @@ class Application {
     process.stdout.write('*************************************************\n \n');
     process.stdout.write('Thanks for using package');
     process.stdout.write('\x1b[00m');
-    process.stdout.write('\x1b[31m @tripathirajan/node-app \x1b[00m \n \n');
+    process.stdout.write(`\x1b[31m ${name || '@tripathirajan/node-app'}@ ${version || ''} \x1b[00m \n \n`);
     process.stdout.write('\x1b[34m');
     process.stdout.write('*************************************************\n');
     process.stdout.write('\x1b[00m');
