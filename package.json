@@ -1,6 +1,6 @@
 {
   "name": "@tripathirjn/rjn-pkjs",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
